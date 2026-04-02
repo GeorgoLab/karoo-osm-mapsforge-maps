@@ -10,6 +10,16 @@ This project pairs with [karoo-custom-mapstyle](https://github.com/dansoft-ch/ka
 
 ---
 
+## Already Prepared Maps for your Karoo per Country
+
+1. Download your preffered country official map into Karoo device via standard process 
+2. Download the prepared maps and XML for Karoo from (https://github.com/GeorgoLab/karoo-osm-mapsforge-maps/releases/)
+3. Copy "country.map" to `(Karoo Storage)\offline\maps` and revrite the official map
+4. Backup the offline_v*.xml in `(Karoo Storage)\` -> offline_v*_backup.xml
+5. Copy the downloaded offline_v*.xml to `(Karoo Storage)\`
+
+---
+
 ## Prerequisites
 
 | Tool | Version | Download |

@@ -4,19 +4,23 @@ Custom OpenStreetMap-based Mapsforge map files for Hammerhead Karoo cycling comp
 
 ## Why?
 
-The Hammerhead Karoo uses proprietary vector tiles that **do not include many useful OSM features** like mountain peaks (`natural=peak`), saddles, elevation data (`ele`), and mountain passes. By rebuilding `.map` files directly from OpenStreetMap data using Mapsforge, you get **full control over which features appear on your Karoo**.
-
-This project pairs with [karoo-custom-mapstyle](https://github.com/dansoft-ch/karoo-custom-mapstyle) — a forked Elevate map style optimized for better visibility on the Karoo display.
+The Hammerhead Karoo uses proprietary vector tiles that **do not include many useful OSM features** like mountain peaks (`natural=peak`), saddles, elevation data (`ele`), mountain passes, springs and more. By rebuilding `.map` files directly from OpenStreetMap data using Mapsforge, you get **full control over which features appear on your Karoo**.
 
 ---
 
 ## Already Prepared Maps for your Karoo per Country
 
+In the releases you will find prepared map files of some countries for direct download. There is no need to build the map with the Step-by-Step guide below.
+
 1. Download your preffered country official map into Karoo device via standard process 
 2. Download the prepared maps and XML for Karoo from (https://github.com/GeorgoLab/karoo-osm-mapsforge-maps/releases/)
-3. Copy "country.map" to `(Karoo Storage)\offline\maps` and revrite the official map
-4. Backup the offline_v*.xml in `(Karoo Storage)\` -> offline_v*_backup.xml
-5. Copy the downloaded offline_v*.xml to `(Karoo Storage)\`
+3. Copy "country.map" into `(Karoo Storage)\offline\maps` and revrite the official map
+4. Backup "offline_v*.xml" from folder `(Karoo Storage)\` -> offline_v*_backup.xml
+5. Copy the downloaded offline_v*.xml into `(Karoo Storage)\`
+
+---
+
+## If you would like to create a map for specific country, follow the steps below
 
 ---
 
@@ -63,6 +67,12 @@ This project pairs with [karoo-custom-mapstyle](https://github.com/dansoft-ch/ka
    C:\Tools\osmosis\lib\default\
    ```
    Create the `default` folder if it doesn't exist.
+   
+   Note: You can copy the JAR into folder
+   ```
+   C:\Users\(user)\.openstreetmapp\osmosis\plugins\
+   ```
+   Without this step, the map generator can throw an error and crash.
 
 ### 4. Download OSM Data
 
@@ -111,18 +121,21 @@ osmosis --plugin-dir "C:\Tools\osmosis\lib\default" ^
 
 > **Adapt for your country:** Change the `.osm.pbf` filename and `map-start-position` coordinates accordingly.
 
-This process takes **5–20 minutes** depending on country size and hardware.
+This process takes **5–20 minutes** depending on country size and hardware. For bigger countries it can run several hours.
 
 ### 7. Upload to Karoo
 
 1. Connect your Karoo to your computer via USB
 2. Navigate to the Karoo's maps storage folder
-3. Copy the generated `.map` file to the device
-4. Restart the Karoo
+3. Copy the generated `.map` file to the device folder `(Karoo Storage)\offline\maps`
 
 ### 8. Apply the Map Style
 
-For the best experience, use the [karoo-custom-mapstyle](https://github.com/dansoft-ch/karoo-custom-mapstyle) — an optimized Elevate theme fork with improved visibility for the Karoo display.
+The map appearance in Karoo is defined by XML file, which defines colors, text and road styles, icons, ...
+
+1. Backup the offline_v*.xml from folder `(Karoo Storage)\` -> offline_v*_backup.xml
+2. Copy the downloaded offline_v*.xml into `(Karoo Storage)\`
+3. Open the map in Karoo (there is no setup in Karoo needed)
 
 ---
 
@@ -149,6 +162,10 @@ C:\MapWork\
 ├── slovakia-latest.osm.pbf      # Downloaded OSM data
 ├── tag-mapping.xml               # Custom tag mapping
 └── slovakia_custom.map           # Generated output
+
+(Karoo Storage)\
+├── offline\maps      # Map folder
+├── offline_v*.xml    # Map visual appearance
 ```
 
 ---
@@ -178,7 +195,7 @@ C:\MapWork\
 | [Mapsforge Default Tag Mapping](https://github.com/mapsforge/mapsforge/blob/master/mapsforge-map-writer/src/main/config/tag-mapping.xml) | Default tag-mapping.xml configuration |
 | [Adoptium / Eclipse Temurin](https://adoptium.net/) | Recommended Java distribution |
 | [Elevate Map Style](https://www.openandromaps.org/en/legend/elevate-mountain-hike-theme) | Original map theme (basis for karoo-custom-mapstyle) |
-| [karoo-custom-mapstyle](https://github.com/dansoft-ch/karoo-custom-mapstyle) | Companion project: optimized Elevate fork for Karoo |
+| [karoo-custom-mapstyle](https://github.com/dansoft-ch/karoo-custom-mapstyle) | Community Karoo map style project: Elevate fork for Karoo |
 | [Karoo-GPS-Style](https://github.com/lockevod/Karoo-GPS-Style) | Community Karoo map style project |
 
 ---

@@ -115,8 +115,7 @@ Open Command Prompt in your working directory and run:
 ```cmd
 cd C:\MapWork
 
-osmosis --plugin-dir "C:\Tools\osmosis\lib\default" ^
-  --read-pbf file=slovakia-latest.osm.pbf ^
+osmosis --read-pbf file=slovakia-latest.osm.pbf ^
   --mapfile-writer file=slovakia_custom.map ^
   type=hd ^
   tag-conf-file=tag-mapping.xml ^

@@ -4,7 +4,7 @@ Custom OpenStreetMap-based Mapsforge map files for Hammerhead Karoo cycling comp
 
 ## Why?
 
-The Hammerhead Karoo uses proprietary vector tiles that **do not include many useful OSM features** like mountain peaks (`natural=peak`), saddles, elevation data (`ele`), mountain passes, springs and more. By rebuilding `.map` files directly from OpenStreetMap data using Mapsforge, you get **full control over which features appear on your Karoo**.
+The Hammerhead Karoo uses proprietary vector tiles that are based on the OpenStreetMap data. Despite OpenStreetMap have very complex set of tags, the Karoo map data is significantly reduced and **do not include many useful OSM features** like mountain peaks (`natural=peak`), saddles, elevation data (`ele`), mountain passes, springs and more. By rebuilding `.map` files directly from OpenStreetMap data using Mapsforge, you get **full control over which features appear on your Karoo**. This project provides optimized map tiles, which are small enough to keep the performance, while covering most important map data for cycling and hiking.
 
 ---
 
@@ -18,6 +18,11 @@ In the releases you will find prepared map files of some countries for direct do
 4. Backup "offline_v*.xml" from folder `(Karoo Storage)\` -> offline_v*_backup.xml
 5. Copy the downloaded offline_v*.xml into `(Karoo Storage)\`
 
+---
+
+## Important Note: The map data in Karoo is being automatically updated and rewritten.
+
+Whenever there is an official update, you need to upload your map again.
 ---
 
 ## If you would like to create a map for specific country, follow the steps below
